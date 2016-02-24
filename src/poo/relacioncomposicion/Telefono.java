@@ -17,15 +17,14 @@ public class Telefono {
     public Tecla[][] teclado = new Tecla[5][3];
     
     public void setTeclado(){
-        int tecla = 1;
+        
         Tecla aux;
         for(int i = 0; i <= 2; i++){
             
             for(int e= 0; e <= 2; e++){
                 aux = new Tecla();
-                aux.setDigito(Integer.toString(tecla).charAt(0));
-                teclado[i][e] = aux;                   
-                tecla++;
+                aux.setDigito(Integer.toString((3*i)+(e+1)).charAt(0));
+                teclado[i][e] = aux;                                   
             }
         }
         aux = new Tecla();
