@@ -149,4 +149,24 @@ public class Telefono {
         return "En el índice " + indice + ":\n" + auxiliar;
     }
     
+    static String mostrarTodosContactos(){       
+        String contactos = "";
+        int numeroContactos = 0;
+        
+        for (int i = 0; i < 100; i++){            
+            if (listaTelefonica[i] != null){
+                contactos = contactos + listaTelefonica[i].mostrarContacto() + "\n\n";
+                numeroContactos++;
+            }
+        }  
+        
+        String aux = "Hay " + numeroContactos + " contactos";
+        
+        if (numeroContactos > 0){
+            aux = aux + ":\n\n" + contactos;
+        }
+        
+        return aux;
+    }
+    
 }
