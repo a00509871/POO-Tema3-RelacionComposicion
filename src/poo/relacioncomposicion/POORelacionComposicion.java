@@ -32,5 +32,20 @@ public class POORelacionComposicion {
             }
         }
 
+        System.out.println("");
+        System.out.println("");
+        
+        Telefono.agregarContacto("Oswaldo Silva Ruelas", "833-1-19-05-44", "osilru1@hotmail.com");
+        System.out.println(Telefono.mostrarContacto(0));
+        System.out.println("");
+        System.out.println(Telefono.mostrarContacto(80));
+        System.out.println("");
+        
+        Telefono.agregarContacto("Aurelio Martínez Girón", "811-2-13-45-66", "jamg1892@hotmail.com");
+        System.out.println(Telefono.mostrarContacto(1));
+        System.out.println("");
+        System.out.println(Telefono.mostrarContacto(111));
+        
+        
     }
 }
