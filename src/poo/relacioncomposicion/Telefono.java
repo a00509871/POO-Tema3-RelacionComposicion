@@ -54,29 +54,43 @@ public class Telefono {
         teclado[4][2] = aux;                
     }
     
+    /**
+     * Método para ayudar a buscar el int del primer espacio disponible en la lista 
+     * @return un int con el primer espacio disponible de la lista o -1 si no existe
+     */
     private static int buscaEspacio(){
+        
+        //Int que regresará el último espacio de la lista.
         int ultimoEspacio=-1;
+        
+        //Un boolean auxiliar que permitirá recorrer la lista
         boolean auxiliar = true;
         
+        // 'For' que recorre la lista hasta encontrar un espacio libre en la lista o 
+        // hasta que la haya recorrido por completo
         for (int i = 0; auxiliar; i++){            
+            // Si encuentra en el lugar i un null, i es el entero buscado
             if (listaTelefonica[i] == null){
                 ultimoEspacio = i;
-            }            
-            auxiliar = i < 100 && listaTelefonica[i] != null;            
+            }                        
+            // Se vuelve false si i = 99 (que implicaría que recorrió toda la lista
+            // o listaTelefonica[i] es null (que implicaría que ya se encontró el espacio buscado)
+            auxiliar = i < 99 && listaTelefonica[i] != null;            
         }                
         
         return ultimoEspacio;
     }
             
+    
     static void agregarContacto(String nombre, String telefono, String correo){
         listaTelefonica[buscaEspacio()] = new Contacto(nombre, telefono, correo);        
     }
     
+    
     static void agregarContacto(Contacto cont){
         listaTelefonica[buscaEspacio()] = cont;        
     }
-    
-    
+        
 //    static String mostrarUltimoContacto(){
 //        return mostrarContacto(contador-1);
 //    }
