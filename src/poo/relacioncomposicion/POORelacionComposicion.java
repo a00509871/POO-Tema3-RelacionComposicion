@@ -46,5 +46,7 @@ public class POORelacionComposicion {
         System.out.println("");
         System.out.println(Telefono.mostrarContacto(111));
         
+        
+        System.out.println(Telefono.mostrarTodosContactos());
     }
 }
