@@ -81,6 +81,34 @@ public class Telefono {
         
         return ultimoEspacio;
     }
+    
+    /**
+     * Método que busca el primer espacio vacío de un arreglo de contacto
+     * @param listaTemp Arreglo de contactos al que se le busca el primer espacio vacío
+     * @return el entero con el int del primer espacio vacío o -1 si no encontró
+     */
+    private static int buscaEspacio(Contacto[] listaTemp){
+        
+        //Int que regresará el último espacio de la lista.
+        int ultimoEspacio=-1;
+        
+        //Un boolean auxiliar que permitirá recorrer la lista
+        boolean auxiliar = true;
+        
+        // 'For' que recorre la lista hasta encontrar un espacio libre en la lista o 
+        // hasta que la haya recorrido por completo
+        for (int i = 0; auxiliar; i++){            
+            // Si encuentra en el lugar i un null, i es el entero buscado
+            if (listaTemp[i] == null){
+                ultimoEspacio = i;
+            }                        
+            // Se vuelve false si i es igual a la última posición de la lista (que implicaría que recorrió toda la lista
+            // o listaTelefonica[i] es null (que implicaría que ya se encontró el espacio buscado)
+            auxiliar = i < (listaTemp.length - 1) && listaTemp[i] != null;            
+        }                
+        
+        return ultimoEspacio;
+    }
             
     /**
      * Método que agrega un contacto a la lista
