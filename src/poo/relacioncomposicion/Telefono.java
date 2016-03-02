@@ -16,6 +16,7 @@ public class Telefono {
     public BotonApagar EA = new BotonApagar();
     public Tecla[][] teclado = new Tecla[5][3];
     private static Contacto[] listaTelefonica = new Contacto[100];
+    
 
     
     public void setTeclado(){
@@ -81,12 +82,20 @@ public class Telefono {
         return ultimoEspacio;
     }
             
-    
+    /**
+     * Método que agrega un contacto a la lista
+     * @param nombre String con nombre del contacto
+     * @param telefono String con telefono del contacto
+     * @param correo String con correo del contacto
+     */
     static void agregarContacto(String nombre, String telefono, String correo){
         listaTelefonica[buscaEspacio()] = new Contacto(nombre, telefono, correo);        
     }
     
-    
+    /**
+     * Método que agrega un contacto a la lista
+     * @param cont Contacto con los datos de la persona a agregar
+     */
     static void agregarContacto(Contacto cont){
         listaTelefonica[buscaEspacio()] = cont;        
     }
@@ -95,9 +104,16 @@ public class Telefono {
 //        return mostrarContacto(contador-1);
 //    }
     
+    /**
+     * Método que regresa un String con los datos del Contacto en el índice solicitado
+     * @param indice int del índice que se piensa buscar
+     * @return Un string que indica si existe o no un contacto en el índice solicitado.
+     */
     static String mostrarContacto(int indice){
         String auxiliar = "No existe contacto";
         
+        // Si el índice solicitado es un entero válido y el contacto en el índice indicado
+        // no esta vacío, el auxiliar guardará los datos del contacto.
         if ((indice < 100) && (indice >= 0) && (listaTelefonica[indice] != null)){
             auxiliar = listaTelefonica[indice].mostrarContacto();
         }
